@@ -1,0 +1,180 @@
+@font-face {
+  font-family: 'Sketchy'; /*a name to be used later*/
+  src: url('fonts/SKETCHY.ttf'); /*URL to font*/
+}
+@font-face {
+  font-family: 'Museo'; /*a name to be used later*/
+  src: url('fonts/MuseoSans-300.ttf'); /*URL to font*/
+}
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+video{
+  width: 100vw;
+  object-fit: cover;
+  z-index: -1;
+  height: fit-content;
+}
+.img-header{
+  position: relative;
+  top:-100px;
+  height: 20vh;
+  z-index: 0;
+}
+.img-header img{
+  display: block;
+}
+nav{
+display: flex;
+justify-content: space-between;
+padding: 23px 35px 23px 35px;
+}
+nav img {
+  width: 60%;
+}
+.menu{
+  display: flex;
+  justify-content: flex-end;
+}
+.menu ul{
+display: flex;
+align-items: center;
+}
+nav ul li{
+  list-style: none;
+  padding: 0 18px;
+  font-family: 'Museo';
+  color:#999998;
+  font-size: 17px;
+}
+.main{
+  position: relative;
+  z-index: 10;
+  font-family: 'Museo';
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ bottom: 80px;
+ padding-top: 50px;
+}
+form{
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
+  border-radius: 3px;
+  text-align: center;
+  padding: 20px;
+  width: 60%;
+}
+form .button{
+  font-family: 'Sketchy';
+  font-size: 42px;
+  letter-spacing:3px ;
+  background-color: #E7E7E7;
+  color:#235675;
+  border:none;
+  margin-top: 20px;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+.button:hover{
+  background-color: lightgray !important;
+  transition: 0.1s ease-in-out;
+}
+.main h3{
+  padding-bottom: 30px;
+  font-family: 'Sketchy';
+  color:#235675;
+  letter-spacing: 3.2px;
+  font-size: 48px;
+  text-align: center;
+}
+input{
+  font-family: 'Museo';
+  margin:10px !important;
+}
+footer{
+  background-image: url(/img/footer-celeste.svg);
+  background-size: cover;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 20px;
+}
+footer i{
+  color:#fff;
+  width: 40px;
+}
+footer img{
+  width: 70px;
+}
+
+.third-img img{
+  width: 200px;
+}
+.arrow-down{
+ position: relative;
+ top:-140px;
+ text-align: center;
+}
+.arrow-down img{
+  width: 40px;
+}
+
+.slider{
+  position: relative;
+  width: 100%;
+}
+
+.slider-content{
+  position: absolute;
+  top:25%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  transform: rotate(-4deg);
+}
+.slider-content h1{
+  font-family: 'Sketchy';
+  color:#fff;
+  font-size: 70px;
+  letter-spacing: 5px;
+}
+.face1{
+  position: absolute;
+  top:130px;
+  width: 55px;
+  left: 30px;
+}
+.face2{
+  position: absolute;
+  bottom: 120px;
+  width: 70px;
+  left: 120px;
+  margin: auto;
+}
+.face3{
+  position: absolute;
+  top: 130px;
+  width: 50px;
+  right: 20px;
+  margin: auto;
+}
+.face4{
+  position: absolute;
+  bottom: 170px;
+  width: 60px;
+  right: 150px;
+  margin: auto;
+}
+.face5{
+  position: absolute;
+  top: 170px;
+  width: 150px;
+  right: 100px;
+  margin: auto;
+}
