@@ -3,7 +3,7 @@ const form = document.getElementById('form')
 const name = document.getElementById('name')
 const lastName = document.getElementById('lastName')
 const email = document.getElementById('email')
-const submit = document.querySelector('#submit')
+const submit = document.getElementById('submit')
 
 submit.addEventListener('click', (e) => {
   const nameValue = name.value
@@ -23,3 +23,4 @@ submit.addEventListener('click', (e) => {
 
   e.preventDefault()
 })
+

@@ -1,15 +1,28 @@
 @font-face {
-  font-family: 'Sketchy'; /*a name to be used later*/
-  src: url('../fonts/SKETCHY.ttf'); /*URL to font*/
+  font-family: 'Sketchy';
+  src: url('../fonts/SKETCHY.ttf'); 
 }
 @font-face {
-  font-family: 'Museo'; /*a name to be used later*/
-  src: url('../fonts/MuseoSans-300.ttf'); /*URL to font*/
+  font-family: 'MuseoLight';
+  src: url('../fonts/MuseoSans-100.ttf'); 
+}
+@font-face {
+  font-family: 'Museo';
+  src: url('../fonts/MuseoSans-300.ttf'); 
+}
+@font-face {
+  font-family: 'MuseoSemiBold';
+  src: url('../fonts/MuseoSans_500.ttf'); 
+}
+@font-face {
+  font-family: 'MuseoBold';
+  src: url('../fonts/MuseoSans_900.ttf'); 
 }
 *{
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 video{
   width: 100vw;
@@ -33,6 +46,9 @@ padding: 23px 35px 23px 35px;
 }
 nav img {
   width: 60%;
+}
+nav ul a {
+  text-decoration: none;
 }
 .menu{
   display: flex;
@@ -179,7 +195,9 @@ footer img{
   right: 100px;
   margin: auto;
 }
-
+.face-voucher{
+  position: fixed !important;
+}
 .loader {
   position: absolute;
   left: 50%;
@@ -210,7 +228,7 @@ footer img{
   font-family: 'Sketchy';
   color:#235675;
   letter-spacing: 3.2px;
-  font-size: 48px;
+  font-size: 80px;
 }
 .container-voucher{
   display: none;
@@ -232,5 +250,179 @@ footer img{
 }
 .local-voucher{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.local-voucher img{
+  margin-right: 20px;
+}
+.header-img{
+  padding-bottom: 30px;
+}
+.usuario-ganador h2, .info-voucher h2{
+  font-family: 'Museo';
+  color:#235675
+}
+.usuario-ganador p, .info-voucher p{
+  font-family: 'MuseoLight';
+  color:#999998;
+  font-size: 20px;
+  margin-bottom: 0 !important;
+}
+.ganaste-container{
+  padding: 20px 60px;
+  background: rgb(223,143,40);
+  background: linear-gradient(90deg, rgba(223,143,40,1) 19%, rgba(218,18,106,1) 93%);
+  border-radius: 50px;
+  color: white;
+  font-family: 'MuseoBold';
+  font-size: 25px;
+  margin: 20px auto;
+  width: 50%;
+  display: inline-block;
+}
+.premio-title{
+  font-family: 'MuseoBold';
+  color:#235675;
+  flex-wrap: wrap;
+  font-size: 35px;
+  padding: 20px 0;
+}
+.menu-mobile{
+  display: none;
+}
+.full-width-menu{
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+ .menu{
+   display: none;
+ }
+ .menu-mobile{
+   display: block !important;
+ }
+ .menu-mobile i{
+   color:grey;
+   cursor: pointer;
+ }
+ nav img{
+   width: 100px;
+ }
+ .slider-content h1{
+   font-size: 40px;
+ }
+ .face1{
+   width: 40px;
+ }
+ .face2{
+   width: 40px;
+   top:200px;
+   left: 20px;
+ }
+ .face3{
+   width: 40px;
+ }
+ .face4{
+   width: 40px;
+   top: 200px;
+   right: 30px;
+ }
+ .face5{
+   width: 80px;
+   bottom: 0;
+ }
+ .main h3{
+   font-size: 25px;
+ }
+ form{
+   width: 80%;
+ }
+ footer{
+   flex-direction: column;
+   padding: 100px 0;
+ }
+ footer .social-icons{
+   padding-bottom: 50px;
+ }
+ footer .center-img{
+   text-align: center;
+ }
+ footer .center-img img{
+   padding-bottom: 20px;
+ }
+ .button{
+   font-size: 25px;
+ }
+ input::-webkit-input-placeholder{
+   font-size: 12px;
+ }
+
+ /*VOUCHER CSS MOBILE*/
+
+.loader-container h3{
+  left: 20%;
+  top: 60%;
+  font-size: 30px;
+}
+.main-voucher{
+  width: 90%;
+  margin: 0 auto 0 auto;
+}
+.main-voucher h3{
+  font-size: 40px;
+}
+.header-img{
+  width: 150px;
+}
+.ganaste-container{
+  padding: 20px 60px;
+  font-size: 25px;
+  margin: 20px auto;
+  width: 80%;
+  display: inline-block;
+}
+.premio-title{
+  font-size: 20px;
+  padding: 20px;
+}
+.local-voucher{
+  flex-direction: column;
+}
+.imagen-voucher{
+  padding-bottom: 20px;
+}
+.info-voucher{
+  text-align: center;
+}
+.full-width-menu{
+  background: #fff;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top:0;
+}
+.full-width-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top:100px;
+}
+.full-width-menu ul li{
+  padding-bottom: 20px;
+}
+.full-width-menu i{
+  position: absolute;
+  right: 35px;
+  top:25px;
+  font-size: 20px;
+  color:grey;
+  cursor: pointer;
+}
 }
