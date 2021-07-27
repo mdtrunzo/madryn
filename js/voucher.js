@@ -44,5 +44,5 @@ function loadingPage() {
   setTimeout(() => {
     loader.style.display = 'none'
     containerVoucher.style.display = 'block'
-  }, 2000)
+  }, 1500)
 }
