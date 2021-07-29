@@ -112,7 +112,7 @@ input{
   margin:10px !important;
 }
 footer{
-  background-image: url(/img/footer-celeste.svg);
+  background-image: url(../img/footer-celeste.svg);
   background-size: cover;
   bottom: 0;
   width: 100%;
