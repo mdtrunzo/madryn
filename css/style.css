@@ -361,9 +361,11 @@ footer img{
  }
 
  /*VOUCHER CSS MOBILE*/
-
+ .loader {
+  left: 53%;
+}
 .loader-container h3{
-  left: 20%;
+  left: 30%;
   top: 60%;
   font-size: 30px;
 }
