@@ -36,10 +36,9 @@ form.addEventListener('submit', async (e) => {
       },
     })
     const json = await response.json()
-    //window.location.href = "voucher.html";
+    const htmlStorage = localStorage.setItem('html_form', json.html)
+    window.location.href = "voucher.php";
 
-
-    
 
   } catch (err) {
     console.log(err)
