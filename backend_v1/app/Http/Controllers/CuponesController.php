@@ -53,16 +53,14 @@ class CuponesController extends Controller
     public function getCupon_demo(Request $request)
     {
         
+        // valido datos
         $validator = Validator::make($request->all(), [ 'email' => 'required', 'lastName' => 'required', 'name' => 'required' ]);
- 
         if ($validator->fails()) { abort(400); }
         
-        $ip = $_SERVER['REMOTE_ADDR'];
+        $ip = $_SERVER['REMOTE_ADDR']; // 127.0.0.1
 
         $cuponGanador = Cupones::inRandomOrder()->limit(1)->get();
-
-        
-        
+  
         $NewCupon = array( 'nombre' => $request->get('name'),
                             'apellido' => $request->get('lastName'),
                             'mail' => $request->get('email'),
