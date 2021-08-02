@@ -6,7 +6,7 @@ const email = document.getElementById('email')
 const submit = document.getElementById('submit')
 
 // Fetch to API
-const url = 'https://flexit.com.ar/madryn/madryn/backend_v1/public/api/quiero-mi-cupon-demo'
+const url = '/api/quiero-mi-cupon-demo'
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault()
@@ -36,8 +36,11 @@ form.addEventListener('submit', async (e) => {
       },
     })
     const json = await response.json()
-    const htmlStorage = localStorage.setItem('html_form', json.html)
-    window.location.href = "voucher.html";
+    //window.location.href = "voucher.html";
+
+
+    
+
   } catch (err) {
     console.log(err)
   }

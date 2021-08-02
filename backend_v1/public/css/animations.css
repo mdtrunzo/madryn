@@ -1,0 +1,93 @@
+
+.animate {
+  position: relative;
+  -webkit-animation-name: animateleft;
+  -webkit-animation-duration: 1s;
+  animation-name: animateleft;
+  animation-duration: 1s
+}
+.animate-fade{
+  -webkit-animation-name: animatefade;
+  -webkit-animation-duration: 1s;
+  animation-name: animatefade;
+  animation-duration: 1s
+}
+.animate-fade2{
+  -webkit-animation-name: animatefade;
+  -webkit-animation-duration: 2s;
+  animation-name: animatefade;
+  animation-duration: 2s
+}
+.animate-fade2{
+  -webkit-animation-name: animatefade;
+  -webkit-animation-duration: 3s;
+  animation-name: animatefade;
+  animation-duration: 3s
+}
+.animate-fade3{
+  -webkit-animation-name: animatefade;
+  -webkit-animation-duration: 4s;
+  animation-name: animatefade;
+  animation-duration: 4s
+}
+.animate-fade3{
+  -webkit-animation-name: animatefade;
+  -webkit-animation-duration: 4s;
+  animation-name: animatefade;
+  animation-duration: 4s
+}
+.animate-fade4{
+  -webkit-animation-name: animatefade;
+  -webkit-animation-duration: 5s;
+  animation-name: animatefade;
+  animation-duration: 5s
+}
+.animate-fade4{
+  -webkit-animation-name: animatefade;
+  -webkit-animation-duration: 5s;
+  animation-name: animatefade;
+  animation-duration: 5s
+}
+.animate-fade5{
+  -webkit-animation-name: animatefade;
+  -webkit-animation-duration:6s;
+  animation-name: animatefade;
+  animation-duration:6s
+}
+.animate-fade5{
+  -webkit-animation-name: animatefade;
+  -webkit-animation-duration:6s;
+  animation-name: animatefade;
+  animation-duration:6s
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes animateleft {
+  from { left:-100px; opacity:0 } 
+  to { left:0px; opacity:1 }
+}
+
+@keyframes animateleft { 
+  from{ left:-100px; opacity:0 } 
+  to{ left:0; opacity:1 }
+}
+
+@-webkit-keyframes animatefade {
+  from { opacity:0 } 
+  to { opacity:1 }
+}
+
+@keyframes animatefade { 
+  from{ opacity:0 } 
+  to{  opacity:1 }
+}
+

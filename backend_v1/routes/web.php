@@ -13,13 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'getCupon'])->name('getCupon');
+Route::get('/', [App\Http\Controllers\CuponesController::class, 'index'])->name('index');
 
-Route::get('/quiero-mi-cupon', [App\Http\Controllers\HomeController::class, 'getCupon'])->name('getCupon');
+
+Route::get('/bsas', [App\Http\Controllers\CuponesController::class, 'indexCaba'])->name('index');
+Route::get('/madryn', [App\Http\Controllers\CuponesController::class, 'indexMadryn'])->name('index');
+
+
 
 Auth::routes();
-
-Route::get('/getCupon', [App\Http\Controllers\HomeController::class, 'getCupon'])->name('getCupon');
-
-
-Route::get('/Cupon-List', [App\Http\Controllers\HomeController::class, 'listCupons'])->name('listCupons');

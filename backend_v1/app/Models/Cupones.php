@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Cupones extends Model
 {
     use HasFactory;
-  
+
     public function getProveedor()
     {
-        return $this->hasOne(Proveedores::class, 'proveedor', 'id');
+        return $this->hasOne(Proveedores::class, 'id', 'proveedor');
     }
 
 }
