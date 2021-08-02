@@ -6,7 +6,7 @@ const email = document.getElementById('email')
 const submit = document.getElementById('submit')
 
 // Fetch to API
-const url = 'https://hookb.in/aBBkK8RgW6tXQ9kkQoxa'
+const url = 'https://flexit.com.ar/madryn/madryn/backend_v1/public/api/quiero-mi-cupon'
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault()
