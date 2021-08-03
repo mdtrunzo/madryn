@@ -94,8 +94,8 @@ class CuponesController extends Controller
                     </div>
                     <div class="info-voucher">
                     <h2>'.$cuponGanador[0]->getProveedor->nombre.'</h2>
-                    <p>'.$cuponGanador[0]->getProveedor->direccion.' </p>
-                    <p>'.$cuponGanador[0]->getProveedor->telefono.' </p>
+                    <p>Dirección: '.$cuponGanador[0]->getProveedor->direccion.' </p>
+                    <p>Tel: '.$cuponGanador[0]->getProveedor->telefono.' </p>
                     </div>
                 </div>
                 </div>';
