@@ -95,7 +95,19 @@ form{
   border-radius: 3px;
   padding: 10px 20px;
 }
-.button:hover{
+.download-pdf{
+  cursor: pointer;
+  font-family: 'Sketchy';
+  font-size: 42px;
+  letter-spacing:3px ;
+  background-color: #E7E7E7;
+  color:#235675;
+  border:none;
+  margin-top: 20px;
+  border-radius: 3px;
+  padding: 20px 40px;
+}
+.button:hover, .download-pdf:hover{
   background-color: lightgray !important;
   transition: 0.1s ease-in-out;
 }
@@ -235,6 +247,7 @@ footer img{
 }
 .body-container{
   padding: 40px 0;
+  text-align: center;
 }
 .main-voucher{
   display: flex;
@@ -243,7 +256,7 @@ footer img{
   align-items: center;
   text-align: center;
   width: 50%;
-  margin: 20px auto 100px auto;
+  margin: 20px auto 40px auto;
   padding: 20px;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
   border-radius: 3px;
