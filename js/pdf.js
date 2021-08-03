@@ -7,6 +7,9 @@ button.addEventListener('click', makePDF)
 
 
 function makePDF() {
+  if (screen.width < 1024) {
+    document.getElementById("viewport").setAttribute("content", "width=800px");
+  }
   var scaleBy = 1;
   var w = 1000;
   var h = 1000;
