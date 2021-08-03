@@ -32,7 +32,7 @@ class CuponesController extends Controller
     }
 
 
-    public function getCupon(Request $request)
+    public function getCupon_demo1(Request $request)
     {
 
          $cupon = array(
