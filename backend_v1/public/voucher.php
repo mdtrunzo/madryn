@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
 </head>
 
 <body>
@@ -74,14 +77,17 @@
     </div>
 
     <div class="body-container">
-      <div class="main-voucher animate-fade">
+      <div class="main-voucher animate-fade" id="capture">
         <img src="img/puerto-madryn-me-emociona-madryn-logo.png" alt="" width="200px" class="header-img">
         <h3>PREMIATE POR SENTIR</h3>
 
         <div class="output">
 
         </div>
-        <span class="button">DESCARGAR VOUCHER</span>
+       
+      </div>
+      <div style='text-align: center; width: 100%;'>
+      <span class="button download-pdf">DESCARGAR VOUCHER</span>
       </div>
     </div>
 
@@ -109,6 +115,7 @@
   </div>
   <script src="js/menu.js"></script>
   <script src="js/voucher.js"></script>
+  <script src="js/pdf.js"></script>
 </body>
 
 </html>
