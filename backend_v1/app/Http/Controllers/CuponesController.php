@@ -59,6 +59,16 @@ class CuponesController extends Controller
         
         $ip = $_SERVER['REMOTE_ADDR']; // 127.0.0.1
 
+        // revisamos si ya salio uno con el mismo mail
+
+        $yaEmitimos = Emisiones::where('mail', $request->get('email'))->get();
+
+        if ( count($yaEmitimos) > 0 ) {
+            $NewCupon = array( 'success' => 'false', 'mensaje' => 'Ya tenes un cupon asociado a esta cuenta de correo.');
+            return response()->json($NewCupon);
+        }
+
+
         $cuponGanador = Cupones::inRandomOrder()->limit(1)->get();
   
         $NewCupon = array( 'nombre' => $request->get('name'),
