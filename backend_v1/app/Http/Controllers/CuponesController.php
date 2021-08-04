@@ -111,6 +111,7 @@ class CuponesController extends Controller
                 </div>';
 
                 $NewCupon['html'] = $html;
+                $NewCupon['success'] = true;
 
 
         return response()->json($NewCupon);
