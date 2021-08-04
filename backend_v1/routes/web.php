@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\CuponesController::class, 'index'])->name('index');
-
-
+Route::get('/', [App\Http\Controllers\CuponesController::class, 'indexCaba'])->name('index');
 Route::get('/bsas', [App\Http\Controllers\CuponesController::class, 'indexCaba'])->name('index');
 Route::get('/madryn', [App\Http\Controllers\CuponesController::class, 'indexMadryn'])->name('index');
 

@@ -86,7 +86,12 @@
         </div>
        
       </div>
+      
+      <div style='text-align: center; width: 100%;'>
       <span class="button download-pdf">DESCARGAR VOUCHER</span>
+
+      </div>
+      
     </div>
 
 
