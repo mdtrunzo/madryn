@@ -68,7 +68,6 @@ class CuponesController extends Controller
             return response()->json($NewCupon);
         }
 
-
         $cuponGanador = Cupones::where('provincia','=','CABA')->inRandomOrder()->limit(1)->get();
   
         $NewCupon = array( 'nombre' => $request->get('name'),
@@ -113,6 +112,7 @@ class CuponesController extends Controller
                 $NewCupon['html'] = $html;
                 $NewCupon['success'] = true;
 
+        $this->sendCorreo($request->get('email'), $NewCupon );
 
         return response()->json($NewCupon);
 
@@ -123,6 +123,8 @@ class CuponesController extends Controller
 
 
     public function sendCorreo($mail, $cupon){
+
+        $url = 'https://flexit.com.ar/madryn/madryn/backend_v1/public/';
 
         $html='<!DOCTYPE html
                     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -164,27 +166,27 @@ class CuponesController extends Controller
                 
                     @font-face {
                         font-family: "Sketchy";
-                        src: url("fonts/SKETCHY.ttf");
+                        src: url("'.$url.'fonts/SKETCHY.ttf");
                     }
                 
                     @font-face {
                         font-family: "MuseoLight";
-                        src: url("fonts/MuseoSans-100.ttf");
+                        src: url("'.$url.'fonts/MuseoSans-100.ttf");
                     }
                 
                     @font-face {
                         font-family: "Museo";
-                        src: url("fonts/MuseoSans-300.ttf");
+                        src: url("'.$url.'fonts/MuseoSans-300.ttf");
                     }
                 
                     @font-face {
                         font-family: "MuseoSemiBold";
-                        src: url("fonts/MuseoSans_500.ttf");
+                        src: url("'.$url.'fonts/MuseoSans_500.ttf");
                     }
                 
                     @font-face {
                         font-family: "MuseoBold";
-                        src: url("fonts/MuseoSans_900.ttf");
+                        src: url("'.$url.'fonts/MuseoSans_900.ttf");
                     }
                     </style>
                     <style id="media-query" type="text/css">
@@ -316,7 +318,7 @@ class CuponesController extends Controller
                                         <div class="img-container center fixedwidth"
                                         style="text-align:center;padding-right: 0px;padding-left: 0px;">
                                         <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
-                                            class="center fixedwidth" src="img/me-emociona-madryn-face-1.png"
+                                            class="center fixedwidth" src="'.$url.'img/me-emociona-madryn-face-1.png"
                                             style="text-align: center;border: 0; text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 42px; max-width: 100%; display: block;"
                                             width="42" />
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -360,7 +362,7 @@ class CuponesController extends Controller
                                         <div align="right" class="img-container right fixedwidth"
                                         style="padding-right: 15px;padding-left: 0px;">
                                         <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 15px;padding-left: 0px;" align="right"><![endif]--><img
-                                            align="right" border="0" class="right fixedwidth" src="img/me-emociona-madryn-face-4.png"
+                                            align="right" border="0" class="right fixedwidth" src="'.$url.'img/me-emociona-madryn-face-4.png"
                                             style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 50px; max-width: 100%; float: none; display: block;"
                                             width="50" />
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -391,7 +393,7 @@ class CuponesController extends Controller
                                         <div align="center" class="img-container center autowidth"
                                         style="padding-right: 0px;padding-left: 0px;">
                                         <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
-                                            align="center" border="0" class="center autowidth" src="img/premiate.png"
+                                            align="center" border="0" class="center autowidth" src="'.$url.'img/premiate.png"
                                             style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 500px; max-width: 100%; display: block;"
                                             width="500" />
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -402,8 +404,8 @@ class CuponesController extends Controller
                                         <div class="txtTinyMce-wrapper"
                                             style="font-size: 14px; line-height: 1.2; color: #235675; font-family: MuseoNormal, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                             <p
-                                            style="margin: 0; font-size: 18px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;">
-                                            EMILIANO CARASA</p>
+                                            style="margin: 0; font-size: 18px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; 
+                                            margin-bottom: 0;">'.$cupon->nombre.' ' .$cupon->apellido.'</p>
                                         </div>
                                         </div>
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -413,8 +415,7 @@ class CuponesController extends Controller
                                         <div class="txtTinyMce-wrapper"
                                             style="font-size: 14px; line-height: 1.2; color: grey; font-family: MuseoLight, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                             <p
-                                            style="margin: 0; font-size: 18px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;">
-                                            emicarasa@gmail.com</p>
+                                            style="margin: 0; font-size: 18px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;">'.$cupon->mail.'</p>
                                         </div>
                                         </div>
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -444,7 +445,7 @@ class CuponesController extends Controller
                                         <div align="center" class="img-container center fixedwidth"
                                         style="padding-right: 0px;padding-left: 0px;">
                                         <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
-                                            align="center" border="0" class="center fixedwidth" src="img/me-emociona-madryn-face-2.png"
+                                            align="center" border="0" class="center fixedwidth" src="'.$url.'img/me-emociona-madryn-face-2.png"
                                             style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 50px; max-width: 100%; display: block;"
                                             width="50" />
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -466,7 +467,7 @@ class CuponesController extends Controller
                                         <div align="center" class="img-container center autowidth"
                                         style="padding-right: 0px;padding-left: 0px;">
                                         <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
-                                            align="center" border="0" class="center autowidth" src="img/ganaste.png"
+                                            align="center" border="0" class="center autowidth" src="'.$url.'img/ganaste.png"
                                             style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 250px; max-width: 100%; display: block;"
                                             width="250" />
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -480,7 +481,7 @@ class CuponesController extends Controller
                                             valign="top" width="100%">
                                             <h1
                                                 style="padding-top:10px;color:#235675;direction:ltr;font-family:MuseoBold, Helvetica Neue, Helvetica, sans-serif;font-size:23px;font-weight:normal;letter-spacing:normal;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;">
-                                                <strong>15% DE DESCUENTO EN SNORKELING CON LOBOS MARINOS <br>en</strong>
+                                                <strong>'.$cupon->cupon[0]->descripcion.'<br>en</strong>
                                             </h1>
                                             </td>
                                         </tr>
@@ -502,7 +503,7 @@ class CuponesController extends Controller
                                         <div align="center" class="img-container center fixedwidth"
                                         style="padding-right: 0px;padding-left: 0px;">
                                         <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
-                                            align="center" border="0" class="center fixedwidth" src="img/me-emociona-madryn-face-3.png"
+                                            align="center" border="0" class="center fixedwidth" src="'.$url.'img/me-emociona-madryn-face-3.png"
                                             style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 44px; max-width: 100%; display: block;"
                                             width="44" />
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -533,7 +534,7 @@ class CuponesController extends Controller
                                         <div align="center" class="img-container center fixedwidth"
                                         style="padding-right: 0px;padding-left: 0px;">
                                         <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
-                                            align="center" border="0" class="center fixedwidth" src="img/prestadores/abramar.png"
+                                            align="center" border="0" class="center fixedwidth" src="'.$url.'img/prestadores/abramar.png"
                                             style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 142px; max-width: 100%; display: block;"
                                             width="142" />
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -559,7 +560,7 @@ class CuponesController extends Controller
                                             style="font-size: 14px; line-height: 1.2; color: #235675; font-family: MuseoNormal, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                             <p
                                             style="margin: 0; font-size: 20px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin-top: 0; margin-bottom: 0;">
-                                            <span style="font-size: 20px;">ABRAMAR BUCEO</span>
+                                            <span style="font-size: 20px;">' . $cupon->proveedor[0]->nombre . '</span>
                                             </p>
                                         </div>
                                         </div>
@@ -571,7 +572,7 @@ class CuponesController extends Controller
                                             style="font-size: 14px; line-height: 1.2; color: grey; font-family: MuseoLight, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                             <p
                                             style="margin: 0; font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;">
-                                            Dirección: xxxxxxxx</p>
+                                            Dirección: ' . $cupon->proveedor[0]->direccion . '</p>
                                         </div>
                                         </div>
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -582,7 +583,7 @@ class CuponesController extends Controller
                                             style="font-size: 14px; line-height: 1.2; color: grey; font-family: MuseoLight, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                             <p
                                             style="margin: 0; font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;">
-                                            Tel: xxxxxxxxx</p>
+                                            Tel: ' . $cupon->proveedor[0]->telefono . '</p>
                                         </div>
                                         </div>
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -612,7 +613,7 @@ class CuponesController extends Controller
                                         <div align="center" class="img-container center autowidth"
                                         style="padding-right: 0px;padding-left: 0px;">
                                         <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
-                                            align="center" border="0" class="center autowidth" src="img/footer-email.png"
+                                            align="center" border="0" class="center autowidth" src="'.$url.'img/footer-email.png"
                                             style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 500px; max-width: 100%; display: block;"
                                             width="500" />
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -676,16 +677,15 @@ class CuponesController extends Controller
                 </body>
                 
                 </html>
-                ';
+        ';
 
-            $headers = 'From: webmaster@example.com'       . "\r\n" .
-                        'Reply-To: webmaster@example.com' . "\r\n" .
-                        'X-Mailer: PHP/' . phpversion();
+        
+        $headers = 'From: webmaster@example.com'       . "\r\n" .
+                    'Reply-To: webmaster@example.com' . "\r\n" .
+                    'X-Mailer: PHP/' . phpversion();
 
-            //mail($to, $subject, $message, $headers);
-            mail($email_to, $asunto_to, $message);
-
-
+        //mail($to, $subject, $message, $headers);
+        mail($mail, 'Voucher Me Emociona Madryn', $html);
 
 
 
