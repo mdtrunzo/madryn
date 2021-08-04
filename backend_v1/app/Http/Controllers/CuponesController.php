@@ -69,7 +69,7 @@ class CuponesController extends Controller
         }
 
 
-        $cuponGanador = Cupones::inRandomOrder()->limit(1)->get();
+        $cuponGanador = Cupones::where('provincia','=','CABA')->inRandomOrder()->limit(1)->get();
   
         $NewCupon = array( 'nombre' => $request->get('name'),
                             'apellido' => $request->get('lastName'),
