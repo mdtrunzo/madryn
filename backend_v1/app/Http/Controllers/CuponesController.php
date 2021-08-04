@@ -124,7 +124,7 @@ class CuponesController extends Controller
 
     public function sendCorreo($mail, $cupon){
 
-dd($cupon);
+        //dd($cupon);
 
         $url = 'https://flexit.com.ar/madryn/madryn/backend_v1/public/';
 
@@ -407,7 +407,7 @@ dd($cupon);
                                             style="font-size: 14px; line-height: 1.2; color: #235675; font-family: MuseoNormal, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                             <p
                                             style="margin: 0; font-size: 18px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; 
-                                            margin-bottom: 0;">'.$cupon->nombre.' ' .$cupon->apellido.'</p>
+                                            margin-bottom: 0;">'.$cupon['nombre'].' ' .$cupon['apellido'].'</p>
                                         </div>
                                         </div>
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -483,7 +483,7 @@ dd($cupon);
                                             valign="top" width="100%">
                                             <h1
                                                 style="padding-top:10px;color:#235675;direction:ltr;font-family:MuseoBold, Helvetica Neue, Helvetica, sans-serif;font-size:23px;font-weight:normal;letter-spacing:normal;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;">
-                                                <strong>'.$cupon->cupon[0]->descripcion.'<br>en</strong>
+                                                <strong>'.$cupon['cupon'][0]['descripcion'].'<br>en</strong>
                                             </h1>
                                             </td>
                                         </tr>
@@ -574,7 +574,7 @@ dd($cupon);
                                             style="font-size: 14px; line-height: 1.2; color: grey; font-family: MuseoLight, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                             <p
                                             style="margin: 0; font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;">
-                                            Dirección: ' . $cupon->proveedor[0]->direccion . '</p>
+                                            Dirección: ' . $cupon['proveedor']->direccion . '</p>
                                         </div>
                                         </div>
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -585,7 +585,7 @@ dd($cupon);
                                             style="font-size: 14px; line-height: 1.2; color: grey; font-family: MuseoLight, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                             <p
                                             style="margin: 0; font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;">
-                                            Tel: ' . $cupon->proveedor[0]->telefono . '</p>
+                                            Tel: ' .$cupon['proveedor']->telefono . '</p>
                                         </div>
                                         </div>
                                         <!--[if mso]></td></tr></table><![endif]-->
