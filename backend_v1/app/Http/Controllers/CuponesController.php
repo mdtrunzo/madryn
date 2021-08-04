@@ -124,6 +124,8 @@ class CuponesController extends Controller
 
     public function sendCorreo($mail, $cupon){
 
+dd($cupon);
+
         $url = 'https://flexit.com.ar/madryn/madryn/backend_v1/public/';
 
         $html='<!DOCTYPE html
