@@ -417,7 +417,7 @@ class CuponesController extends Controller
                                         <div class="txtTinyMce-wrapper"
                                             style="font-size: 14px; line-height: 1.2; color: grey; font-family: MuseoLight, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                             <p
-                                            style="margin: 0; font-size: 18px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;">'.$cupon->mail.'</p>
+                                            style="margin: 0; font-size: 18px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;">'.$cupon['mail'].'</p>
                                         </div>
                                         </div>
                                         <!--[if mso]></td></tr></table><![endif]-->
