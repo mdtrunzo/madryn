@@ -562,7 +562,7 @@ class CuponesController extends Controller
                                             style="font-size: 14px; line-height: 1.2; color: #235675; font-family: MuseoNormal, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                             <p
                                             style="margin: 0; font-size: 20px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin-top: 0; margin-bottom: 0;">
-                                            <span style="font-size: 20px;">' . $cupon->proveedor[0]->nombre . '</span>
+                                            <span style="font-size: 20px;">' . $cupon['proveedor']->nombre . '</span>
                                             </p>
                                         </div>
                                         </div>
