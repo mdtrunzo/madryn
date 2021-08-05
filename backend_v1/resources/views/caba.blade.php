@@ -97,6 +97,7 @@
       <div class="form-group">
         <input type="email" name="email" class="form-control values" id="email" aria-describedby="emailHelp"
           placeholder="Correo Electrónico" required>
+          <span class="alert-msg">Ya tenés un cupón generado con este correo electrónico.</span>
       </div>
       <button class="button" id="submit">ENVIAR</button>
     </form>

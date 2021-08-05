@@ -337,7 +337,10 @@ footer img{
 .full-width-menu{
   display: none;
 }
-
+.alert-msg{
+  color:red;
+  display: none;
+}
 @media only screen and (max-width: 768px) {
  .menu{
    display: none;
@@ -470,6 +473,7 @@ footer img{
 }
 .footer-voucher p {
   font-size: 10px !important;
+  padding: 0 10px !important;
 }
 .main-voucher{
   margin-bottom: 50px;
@@ -484,5 +488,8 @@ width: 100px;
   top:30px !important;
   right: 70px;
   width: 100px;
+}
+.alert-msg{
+  font-size: 12px;
 }
 }
