@@ -194,7 +194,7 @@
                                             <div class="img-container center fixedwidth"
                                                 style="text-align:center;padding-right: 0px;padding-left: 0px;">
                                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
-                                                    class="center fixedwidth" src="img/me-emociona-madryn-face-1.png"
+                                                    class="center fixedwidth" src="{{ $details['url_img'] }}img/me-emociona-madryn-face-1.png"
                                                     style="text-align: center;border: 0; text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 42px; max-width: 100%; display: block;"
                                                     width="42" />
                                                 <!--[if mso]></td></tr></table><![endif]-->
@@ -217,7 +217,7 @@
                                                 style="text-align: center; padding-right: 0px;padding-left: 0px;">
                                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
                                                     class="center fixedwidth"
-                                                    src="img/puerto-madryn-me-emociona-madryn-logo.png"
+                                                    src="{{ $details['url_img'] }}img/puerto-madryn-me-emociona-madryn-logo.png"
                                                     style="text-align: center;border:0; text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 167px; max-width: 100%; display: block;"
                                                     width="167" />
                                                 <!--[if mso]></td></tr></table><![endif]-->
@@ -240,7 +240,7 @@
                                                 style="padding-right: 15px;padding-left: 0px;">
                                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 15px;padding-left: 0px;" align="right"><![endif]--><img
                                                     align="right" border="0" class="right fixedwidth"
-                                                    src="img/me-emociona-madryn-face-4.png"
+                                                    src="{{ $details['url_img'] }}img/me-emociona-madryn-face-4.png"
                                                     style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 50px; max-width: 100%; float: none; display: block;"
                                                     width="50" />
                                                 <!--[if mso]></td></tr></table><![endif]-->
@@ -273,7 +273,7 @@
                                                 style="padding-right: 0px;padding-left: 0px;">
                                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
                                                     align="center" border="0" class="center autowidth"
-                                                    src="img/premiate.png"
+                                                    src="{{ $details['url_img'] }}img/premiate.png"
                                                     style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 500px; max-width: 100%; display: block;"
                                                     width="500" />
                                                 <!--[if mso]></td></tr></table><![endif]-->
@@ -328,7 +328,7 @@
                                                 style="padding-right: 0px;padding-left: 0px;">
                                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
                                                     align="center" border="0" class="center fixedwidth"
-                                                    src="img/me-emociona-madryn-face-2.png"
+                                                    src="{{ $details['url_img'] }}img/me-emociona-madryn-face-2.png"
                                                     style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 50px; max-width: 100%; display: block;"
                                                     width="50" />
                                                 <!--[if mso]></td></tr></table><![endif]-->
@@ -351,7 +351,7 @@
                                                 style="padding-right: 0px;padding-left: 0px;">
                                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
                                                     align="center" border="0" class="center autowidth"
-                                                    src="img/ganaste.png"
+                                                    src="{{ $details['url_img'] }}img/ganaste.png"
                                                     style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 250px; max-width: 100%; display: block;"
                                                     width="250" />
                                                 <!--[if mso]></td></tr></table><![endif]-->
@@ -388,7 +388,7 @@
                                                 style="padding-right: 0px;padding-left: 0px;">
                                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
                                                     align="center" border="0" class="center fixedwidth"
-                                                    src="img/me-emociona-madryn-face-3.png"
+                                                    src="{{ $details['url_img'] }}img/me-emociona-madryn-face-3.png"
                                                     style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 44px; max-width: 100%; display: block;"
                                                     width="44" />
                                                 <!--[if mso]></td></tr></table><![endif]-->
@@ -421,7 +421,7 @@
                                                 style="padding-right: 0px;padding-left: 0px;">
                                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
                                                     align="center" border="0" class="center fixedwidth"
-                                                    src="img/prestadores/abramar.png"
+                                                    src="{{ $details['img_proveedor'] }}"
                                                     style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 142px; max-width: 100%; display: block;"
                                                     width="142" />
                                                 <!--[if mso]></td></tr></table><![endif]-->
@@ -503,7 +503,7 @@
                                                 style="padding-right: 0px;padding-left: 0px;">
                                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img
                                                     align="center" border="0" class="center autowidth"
-                                                    src="img/footer-email.png"
+                                                    src="{{ $details['url_img'] }}img/footer-email.png"
                                                     style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 500px; max-width: 100%; display: block;"
                                                     width="500" />
                                                 <!--[if mso]></td></tr></table><![endif]-->

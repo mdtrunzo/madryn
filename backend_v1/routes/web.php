@@ -17,6 +17,8 @@ Route::get('/', [App\Http\Controllers\CuponesController::class, 'indexCaba'])->n
 Route::get('/bsas', [App\Http\Controllers\CuponesController::class, 'indexCaba'])->name('index');
 Route::get('/madryn', [App\Http\Controllers\CuponesController::class, 'indexMadryn'])->name('index');
 
+Route::get('/mailtest', [App\Http\Controllers\CuponesController::class, 'mailtest'])->name('mailtest');
+
 
 
 Auth::routes();

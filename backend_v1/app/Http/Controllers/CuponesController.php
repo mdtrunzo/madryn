@@ -29,23 +29,13 @@ class CuponesController extends Controller
 
     }
 
-
-/*     public function getCupon_demo1(Request $request)
+    public function mailtest() 
     {
-
-         $cupon = array(
-            "id" => 1,
-            "prestador"=> "Nievemar",
-            "premio"=> "2x1 en excursión regular (medio día) a El Doradillo o en su defecto (por fin de temporada) a Punta Loma",
-            "direccion"=> "Italia 20, Trelew, Chubut",
-            "telefono"=> "0280 443-4114",
-            "img"=> "img/nievemar.png"
-         );
-
-         return response()->json($cupon);
-
-    } */
-
+    
+        $details = [ 'nombre' => "emi", 'mail' => "emi@mgial.com",'cupon_desc'=>'lalalalalal', 'proveedor_nombre' => 'proveedor_nombre', 'proveedor_direccion' => 'proveedor_direccion', 'proveedor_tel' =>'proveedor_tel' ];
+        \Mail::to("emilianocarasa@gmail.com")->send(new \App\Mail\MailVoucher($details));
+    
+    }
 
 
     public function getCupon_demo(Request $request)
@@ -96,41 +86,30 @@ class CuponesController extends Controller
         unset($NewCupon['rela_cupon']);
         unset($NewCupon['ip']);
 
-        $html= '<div class="usuario-ganador">
-                <h2>'.$request->get('name'). ' '. $request->get('lastName') .'</h2>
-                <p>'.$request->get('email').'</p>
-                </div>
-                <div class="premio">
-                <div class="ganaste-container">
-                    <span class="ganaste">GANASTE</span>
-                </div>
+        $html= '<div class="usuario-ganador"><h2>'.$request->get('name'). ' '. $request->get('lastName') .'</h2>
+                <p>'.$request->get('email').'</p></div><div class="premio"><div class="ganaste-container"><span class="ganaste">GANASTE</span></div>
                 <p class="premio-title">'.$cuponGanador[0]['descripcion'].'<br>en</br></p>
-                <div class="local-voucher">
-                    <div class="imagen-voucher">
-                        <img src="'.$cuponGanador[0]->getProveedor->data_1.'" width="200">
-                    </div>
-                    <div class="info-voucher">
-                        <h2>'.$cuponGanador[0]->getProveedor->nombre.'</h2>
-                        <p>Dirección: '.$cuponGanador[0]->getProveedor->direccion.' </p>
-                        <p>Tel: '.$cuponGanador[0]->getProveedor->telefono.' </p>
-                    </div>
-                </div>
-                </div>';
+                <div class="local-voucher"><div class="imagen-voucher"><img src="'.$cuponGanador[0]->getProveedor->data_1.'" width="200"></div>
+                <div class="info-voucher"><h2>'.$cuponGanador[0]->getProveedor->nombre.'</h2>
+                <p>Dirección: '.$cuponGanador[0]->getProveedor->direccion.' </p><p>Tel: '.$cuponGanador[0]->getProveedor->telefono.' </p></div></div></div>';
 
         $NewCupon['html'] = $html;
         $NewCupon['success'] = true;
 
-
-        /*  
+        
         $details = [
             'nombre' => $request->get('name'). ' '. $request->get('lastName'),
             'mail' => $request->get('email'),
+            'cupon_desc' => $cuponGanador[0]['descripcion'],
+            'url_img' => 'https://flexit.com.ar/madryn/madryn/backend_v1/public/',
+            'img_proveedor' => $cuponGanador[0]->getProveedor->data_1,
             'proveedor_nombre' => $cuponGanador[0]->getProveedor->nombre,
             'proveedor_direccion' => $cuponGanador[0]->getProveedor->direccion,
             'proveedor_tel' => $cuponGanador[0]->getProveedor->telefono
         ];
        
-        \Mail::to($request->get('email'))->send(new \App\Mail\MailVoucher($details)); */
+                
+        \Mail::to("emilianocarasa@gmail.com")->send(new \App\Mail\MailVoucher($details));
        
         return response()->json($NewCupon);
 
