@@ -56,7 +56,7 @@ class CuponesController extends Controller
 
 
 
-        $cupon = array(
+        $cuponnnnn = array(
             "id" => 1,
             "prestador"=> "Nievemar",
             "premio"=> "2x1 en excursión regular (medio día) a El Doradillo o en su defecto (por fin de temporada) a Punta Loma",
@@ -65,7 +65,6 @@ class CuponesController extends Controller
             "img"=> "img/nievemar.png"
          );
 
-         return response()->json($cupon);
 
         
         // valido datos
@@ -75,6 +74,7 @@ class CuponesController extends Controller
         $ip = $_SERVER['REMOTE_ADDR']; // 127.0.0.1
 
         // revisamos si ya salio uno con el mismo mail
+        return response()->json($cupon);
 
         $yaEmitimos = Emisiones::where('mail', $request->get('email'))->get();
 
