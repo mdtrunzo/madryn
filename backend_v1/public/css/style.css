@@ -173,6 +173,19 @@ footer img{
   font-size: 70px;
   letter-spacing: 5px;
 }
+.face-emociones{
+  position: absolute;
+  top:80px;
+  width: 240px;
+  left: 30px;
+}
+.face-madryn{
+  position: absolute;
+  top: 80px;
+  width: 250px;
+  right: 20px;
+  margin: auto;
+}
 .face1{
   position: absolute;
   top:130px;
@@ -257,9 +270,23 @@ footer img{
   text-align: center;
   width: 50%;
   margin: 20px auto 40px auto;
-  padding: 20px;
+  padding-top: 20px;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
   border-radius: 3px;
+  border:1px solid rgba(0,0,0,0.14);
+}
+.main-voucher .footer-voucher{
+  background-image: url('../img/footer-celeste.svg');
+  background-size: cover;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+}
+.main-voucher .footer-voucher p {
+  font-size: 12px;
+  font-family: 'MuseoLight';
 }
 .local-voucher{
   display: flex;
@@ -267,6 +294,7 @@ footer img{
   align-items: center;
   margin-bottom: 20px;
   text-align: left;
+  padding: 0 40px 40px 40px;
 }
 .local-voucher img{
   margin-right: 20px;
@@ -301,7 +329,7 @@ footer img{
   color:#235675;
   flex-wrap: wrap;
   font-size: 35px;
-  padding: 20px 0;
+  padding: 20px;
 }
 .menu-mobile{
   display: none;
@@ -439,5 +467,22 @@ footer img{
   font-size: 20px;
   color:grey;
   cursor: pointer;
+}
+.footer-voucher p {
+  font-size: 10px !important;
+}
+.main-voucher{
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.face-emociones{
+top:20px !important;
+left: 70px;
+width: 100px;
+}
+.face-madryn{
+  top:30px !important;
+  right: 70px;
+  width: 100px;
 }
 }
