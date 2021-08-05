@@ -123,19 +123,16 @@ class CuponesController extends Controller
 
 
 
-    public function sendCorreo($nombre, $mail, $cupon){
+    public function sendCorreo($to_name, $to_mail, $cupon){
 
-        $to_name = ‘RECEIVER_NAME’;
-        $to_email = ‘RECEIVER_EMAIL_ADDRESS’;
         $data = array(
             'url' => 'https://flexit.com.ar/madryn/madryn/backend_v1/public/',
             'cupon' => $cupon
-
         );
         
-        Mail::send(‘emails.mail’, $data, function($message) use ($to_name, $to_email) {
-            $message->to($to_email, $to_name)->subject(Laravel Test Mail’);
-            $message->from(‘SENDER_EMAIL_ADDRESS’,’Test Mail’);
+        Mail::send('emails.mail', $data, function($message) use ($to_name, $to_mail) {
+            $message->to($to_mail, $to_name)->subject('Voucher - Me emociona Madryn');
+            $message->from('noreply@flexit.com.ar','Me Emociona Madryn');
         });
 
 
