@@ -109,7 +109,7 @@ class CuponesController extends Controller
         ];
        
                 
-        \Mail::to("emilianocarasa@gmail.com")->send(new \App\Mail\MailVoucher($details));
+        \Mail::to($request->get('email'))->send(new \App\Mail\MailVoucher($details));
        
         return response()->json($NewCupon);
 
