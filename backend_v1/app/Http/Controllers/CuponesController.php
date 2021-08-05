@@ -53,6 +53,20 @@ class CuponesController extends Controller
 
     public function getCupon_demo(Request $request)
     {
+
+
+
+        $cupon = array(
+            "id" => 1,
+            "prestador"=> "Nievemar",
+            "premio"=> "2x1 en excursión regular (medio día) a El Doradillo o en su defecto (por fin de temporada) a Punta Loma",
+            "direccion"=> "Italia 20, Trelew, Chubut",
+            "telefono"=> "0280 443-4114",
+            "img"=> "img/nievemar.png"
+         );
+
+         return response()->json($cupon);
+
         
         // valido datos
         $validator = Validator::make($request->all(), [ 'email' => 'required', 'lastName' => 'required', 'name' => 'required' ]);
