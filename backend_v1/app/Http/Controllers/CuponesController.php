@@ -7,7 +7,7 @@ use App\Models\Emisiones;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Mail;
+//use Mail;
 
 class CuponesController extends Controller
 {
@@ -113,7 +113,7 @@ class CuponesController extends Controller
                 $NewCupon['html'] = $html;
                 $NewCupon['success'] = true;
 
-        $this->sendCorreo($request->get('email'), $NewCupon );
+        //$this->sendCorreo($request->get('email'), $NewCupon );
 
         return response()->json($NewCupon);
 
