@@ -69,12 +69,13 @@ class CuponesController extends Controller
         
         // valido datos
         $validator = Validator::make($request->all(), [ 'email' => 'required', 'lastName' => 'required', 'name' => 'required' ]);
-        if ($validator->fails()) { abort(400); }
+        
+        if ($validator->fails()) { 
+            $NewCupon = array( 'success' => 'false', 'mensaje' => 'Faltan datos.');
+            return response()->json($NewCupon);
+         }
         
         $ip = $_SERVER['REMOTE_ADDR']; // 127.0.0.1
-
-        // revisamos si ya salio uno con el mismo mail
-        return response()->json($cupon);
 
         $yaEmitimos = Emisiones::where('mail', $request->get('email'))->get();
 
