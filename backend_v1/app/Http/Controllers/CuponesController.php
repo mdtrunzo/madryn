@@ -121,6 +121,7 @@ class CuponesController extends Controller
         $NewCupon['success'] = true;
 
 
+        /*  
         $details = [
             'nombre' => $request->get('name'). ' '. $request->get('lastName'),
             'mail' => $request->get('email'),
@@ -129,7 +130,7 @@ class CuponesController extends Controller
             'proveedor_tel' => $cuponGanador[0]->getProveedor->telefono
         ];
        
-        \Mail::to($request->get('email'))->send(new \App\Mail\MailVoucher($details));
+        \Mail::to($request->get('email'))->send(new \App\Mail\MailVoucher($details)); */
        
         return response()->json($NewCupon);
 
