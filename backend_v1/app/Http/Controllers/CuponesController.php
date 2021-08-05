@@ -65,7 +65,7 @@ class CuponesController extends Controller
         $yaEmitimos = Emisiones::where('mail', $request->get('email'))->get();
 
         if ( count($yaEmitimos) > 0 ) {
-            $NewCupon = array( 'success' => 'false', 'mensaje' => 'Ya tenes un cupon asociado a esta cuenta de correo.');
+            $NewCupon = array( 'success' => 'false', 'mensaje' => 'Ya tenés un cupon asociado a esta cuenta de correo.');
             return response()->json($NewCupon);
         }
 
