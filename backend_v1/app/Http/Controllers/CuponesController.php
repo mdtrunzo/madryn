@@ -21,19 +21,16 @@ class CuponesController extends Controller
     }
     
 
-
     public function index() {
 
         $ip = $_SERVER['REMOTE_ADDR'];
         $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
         print_r($details);
 
-
-
     }
 
 
-    public function getCupon_demo1(Request $request)
+/*     public function getCupon_demo1(Request $request)
     {
 
          $cupon = array(
@@ -47,14 +44,12 @@ class CuponesController extends Controller
 
          return response()->json($cupon);
 
-    }
+    } */
 
 
 
     public function getCupon_demo(Request $request)
     {
-
-
 
         $cuponnnnn = array(
             "id" => 1,
@@ -65,8 +60,6 @@ class CuponesController extends Controller
             "img"=> "img/nievemar.png"
          );
 
-
-        
         // valido datos
         $validator = Validator::make($request->all(), [ 'email' => 'required', 'lastName' => 'required', 'name' => 'required' ]);
         
@@ -76,7 +69,6 @@ class CuponesController extends Controller
          }
         
         $ip = $_SERVER['REMOTE_ADDR']; // 127.0.0.1
-
         $yaEmitimos = Emisiones::where('mail', $request->get('email'))->get();
 
         if ( count($yaEmitimos) > 0 ) {
@@ -125,20 +117,27 @@ class CuponesController extends Controller
                 </div>
                 </div>';
 
-                $NewCupon['html'] = $html;
-                $NewCupon['success'] = true;
+        $NewCupon['html'] = $html;
+        $NewCupon['success'] = true;
 
-        $this->sendCorreo($request->get('email'), $NewCupon );
 
+        $details = [
+            'nombre' => $request->get('name'). ' '. $request->get('lastName'),
+            'mail' => $request->get('email'),
+            'proveedor_nombre' => $cuponGanador[0]->getProveedor->nombre,
+            'proveedor_direccion' => $cuponGanador[0]->getProveedor->direccion,
+            'proveedor_tel' => $cuponGanador[0]->getProveedor->telefono
+        ];
+       
+        \Mail::to($request->get('email'))->send(new \App\Mail\MailVoucher($details));
+       
         return response()->json($NewCupon);
-
-
 
     }
 
 
 
-    public function sendCorreo($to_name, $to_mail, $cupon){
+/*     public function sendCorreo($to_name, $to_mail, $cupon){
 
         $data = array(
             'url' => 'https://flexit.com.ar/madryn/madryn/backend_v1/public/',
@@ -151,7 +150,7 @@ class CuponesController extends Controller
         });
 
 
-    }
+    } */
 
 
 

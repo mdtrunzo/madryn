@@ -284,7 +284,7 @@
                                                 <div class="txtTinyMce-wrapper"
                                                     style="font-size: 14px; line-height: 1.2; color: #235675; font-family: MuseoNormal, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                                     <p style="margin: 0; font-size: 18px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; 
-                                            margin-bottom: 0;">{{ $cupon['nombre'] }} {{ $cupon['apellido'] }}</p>
+                                            margin-bottom: 0;">{{ $details['nombre'] }}</p>
                                                 </div>
                                             </div>
                                             <!--[if mso]></td></tr></table><![endif]-->
@@ -295,7 +295,8 @@
                                                     style="font-size: 14px; line-height: 1.2; color: grey; font-family: MuseoLight, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                                     <p
                                                         style="margin: 0; font-size: 18px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;">
-                                                        '.$cupon['mail'].'</p>
+{{ $details['mail'] }}
+</p>
                                                 </div>
                                             </div>
                                             <!--[if mso]></td></tr></table><![endif]-->
@@ -364,7 +365,7 @@
                                                         valign="top" width="100%">
                                                         <h1
                                                             style="padding-top:10px;color:#235675;direction:ltr;font-family:MuseoBold, Helvetica Neue, Helvetica, sans-serif;font-size:23px;font-weight:normal;letter-spacing:normal;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;">
-                                                            <strong>'.$cupon['cupon'][0]['descripcion'].'<br>en</strong>
+                                                            <strong>{{ $details['cupon_desc'] }}<br>en</strong>
                                                         </h1>
                                                     </td>
                                                 </tr>
@@ -447,7 +448,7 @@
                                                     <p
                                                         style="margin: 0; font-size: 20px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 24px; margin-top: 0; margin-bottom: 0;">
                                                         <span
-                                                            style="font-size: 20px;">{{ $cupon['proveedor']->nombre }}</span>
+                                                            style="font-size: 20px;">{{ $details['proveedor_nombre'] }}</span>
                                                     </p>
                                                 </div>
                                             </div>
@@ -459,7 +460,7 @@
                                                     style="font-size: 14px; line-height: 1.2; color: grey; font-family: MuseoLight, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                                     <p
                                                         style="margin: 0; font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;">
-                                                        Dirección: {{ $cupon['proveedor']->direccion }}</p>
+                                                        Dirección: {{ $details['proveedor_direccion'] }}</p>
                                                 </div>
                                             </div>
                                             <!--[if mso]></td></tr></table><![endif]-->
@@ -470,7 +471,7 @@
                                                     style="font-size: 14px; line-height: 1.2; color: grey; font-family: MuseoLight, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 17px;">
                                                     <p
                                                         style="margin: 0; font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;">
-                                                        Tel: {{ $cupon['proveedor']->telefono }}</p>
+                                                        Tel: {{ $details['proveedor_tel'] }}</p>
                                                 </div>
                                             </div>
                                             <!--[if mso]></td></tr></table><![endif]-->
